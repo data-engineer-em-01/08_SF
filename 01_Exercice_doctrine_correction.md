@@ -31,4 +31,19 @@ composer require --dev orm-fixtures
 
 # load des données
 php bin/console doctrine:fixtures:load
+
+# tests
+composer require --dev symfony/test-pack
+# Lancé les tests
+php bin/phpunit
+# Création de la base de données
+php bin/console --env=test doctrine:database:create
+
+# Création de/des table(s) dans la base de données
+php bin/console --env=test doctrine:schema:create
+
+# La configuration 
+composer require --dev dama/doctrine-test-bundle
 ```
+
+- 
