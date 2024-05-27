@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Services;
+namespace App\Service;
 use App\Repository\BookRepository;
 
 class BookService{
     private $bookRepository;
     private $exchangeRate;
 
-    public function __construct(BookRepository $bookRepository, float $exchangeRate)
+    public function __construct(BookRepository $bookRepository)
     {
         $this->bookRepository = $bookRepository;
-        $this->exchangeRate = $exchangeRate; 
+        $this->exchangeRate = 1.1; 
     }
 
     /**
@@ -22,9 +22,7 @@ class BookService{
      */
     public function calculatePriceWithBonus(float $price, float $bonusPercentage): float
     {
-        $bonus = round( $price * ($bonusPercentage / 100), 2 ) ;
-
-        return $price + $bonus;
+        return round( $price * ( 1 -  $bonusPercentage / 100), 2 ) ;
     }
 
     /**

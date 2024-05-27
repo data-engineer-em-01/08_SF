@@ -90,3 +90,12 @@ class BookRepositoryTest extends KernelTestCase
     1. calculatePriceWithBonus(float $price, float $bonusPercentage): float
     1. convertEuroToDollar(float $priceInEuro): float
     1. getBooksPriceInDollars(): array
+   
+## Entité et Service 
+
+1. Créer une nouvelle entité Category.
+*Mettre à jour l'entité Book pour inclure la relation Many-to-Many avec Category.*
+
+   1. Ajouter une méthode dans le service BookService pour récupérer les livres avec leurs catégories.
+   2. Hydratater les deux entitées.
+   3. Imaginez un service et testez le
