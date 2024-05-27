@@ -27,7 +27,8 @@ L'entité `Book` a les attributs suivants :
 
 2. **Créer l'entité `Book`**
 
-   - Créer l'entité `Book` avec les annotations pour Doctrine.
+   - Créer l'entité `Book` avec les attributs pour Doctrine.
+   - Hydrater l'entité `Book` avec les Faker de Symfony.
 
 3. **Créer le Repository Personnalisé**
 
@@ -37,10 +38,9 @@ L'entité `Book` a les attributs suivants :
      - `findRecentBooks()`: Trouver les livres publiés dans les 30 derniers jours.
      - `findBooksByTitle(string $title)`: Trouver les livres par titre, recherche insensible à la casse.
 
-4. **Créer des Scripts CLI pour Tester**
+4. **Tester**
 
-   - Script pour ajouter des livres.
-   - Script pour utiliser les méthodes du repository et afficher les résultats.
+- Une fois les fonctionalités en place, trouvez une méthode de tests adaptés à l'exercice.
 
 #### Schéma UML de l'Entité `Book`
 
