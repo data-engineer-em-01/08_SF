@@ -22,7 +22,7 @@ php bin/console doctrine:migrations:migrate
 
 # Les fakers données d'exemples
 composer require zenstruck/foundry --dev
-# Création du Faker
+# Création du Faker BookFactory
 php bin/console make:factory
 
 # Création de la fixture pour créer les données effectives dans la BD
@@ -37,6 +37,8 @@ composer require --dev symfony/test-pack
 ```
 
 Un fichier .env.test est créé à la racine du projet SF
+
+## Base de données 
 
 ```txt
 DATABASE_URL="mysql://root:antoine@127.0.0.1:3306/library"
