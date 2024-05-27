@@ -34,6 +34,15 @@ php bin/console doctrine:fixtures:load
 
 # tests
 composer require --dev symfony/test-pack
+```
+
+Un fichier .env.test est créé à la racine du projet SF
+
+```txt
+DATABASE_URL="mysql://root:antoine@127.0.0.1:3306/library"
+```
+
+```bash
 # Lancé les tests
 php bin/phpunit
 # Création de la base de données
@@ -42,8 +51,10 @@ php bin/console --env=test doctrine:database:create
 # Création de/des table(s) dans la base de données
 php bin/console --env=test doctrine:schema:create
 
+# load des données dans la/les tables de tests
+php bin/console --env=test doctrine:fixtures:load
+
 # La configuration 
 composer require --dev dama/doctrine-test-bundle
 ```
 
-- 

@@ -1,6 +1,14 @@
 # Introduction aux Tests en PHP avec Doctrine
 
-Les tests sont essentiels pour garantir la fiabilité et la stabilité de votre application. Dans le contexte de l'utilisation de Doctrine pour la gestion des données, il est important de comprendre les différents types de tests que vous pouvez utiliser pour vérifier que votre code fonctionne correctement. Nous allons couvrir trois types de tests : les tests unitaires, les tests d'intégration et les tests applicatifs.
+🍨 Les tests sont essentiels pour garantir la fiabilité et la stabilité de votre application. 
+
+Dans le contexte de l'utilisation de Doctrine pour la gestion des données, il est important de comprendre les différents types de tests que vous pouvez utiliser pour vérifier que votre code fonctionne correctement. 
+
+Nous allons couvrir trois types de tests principaux : 
+
+- Les tests unitaires.
+- Les tests d'intégration.
+- Les tests applicatifs.
 
 ## Types de Tests
 
@@ -10,7 +18,9 @@ Les tests sont essentiels pour garantir la fiabilité et la stabilité de votre 
 
 ### Tests Unitaires
 
-Les tests unitaires visent à vérifier le comportement de petites unités de code, comme une seule classe ou une méthode. Ils sont écrits pour tester des composants isolés de votre application sans dépendances extérieures (comme une base de données).
+Les tests unitaires visent à vérifier le comportement de petites unités de code (algorithmique), comme une seule classe ou une méthode.
+
+Ils sont écrits pour tester des composants isolés de votre application sans dépendances extérieures (comme une base de données).
 
 **Exemple : Tester une méthode du repository personnalisé**
 
@@ -60,7 +70,9 @@ class BookRepositoryTest extends TestCase
 
 ### Tests d'Intégration
 
-Les tests d'intégration vérifient que plusieurs composants fonctionnent correctement ensemble. Dans le contexte de Doctrine, ils impliquent souvent la vérification de l'interaction entre les entités et la base de données.
+Les tests d'intégration vérifient que plusieurs composants fonctionnent correctement ensemble. 
+
+Dans le contexte de Doctrine, ils impliquent souvent la vérification de l'interaction entre les entités et la base de données.
 
 **Exemple : Tester l'intégration de l'entité `Book` avec la base de données**
 
