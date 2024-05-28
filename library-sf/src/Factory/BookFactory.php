@@ -50,6 +50,7 @@ final class BookFactory extends ModelFactory
             'author' => self::faker()->name(),
             'price' => self::faker()->randomFloat(2,20, 50),
             'title' => self::faker()->text(20),
+            // 
             'publishedAt' => self::faker()->dateTimeThisYear('+2 months')
         ];
     }

@@ -14,3 +14,6 @@ services:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
             - '../src/Kernel.php'
+    App\Service\BookService:
+        arguments:
+            $exchangeRate: '%env(EXCHANGE_RATE)%'

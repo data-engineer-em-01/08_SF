@@ -43,7 +43,6 @@ composer require --dev dama/doctrine-test-bundle
    
    1. Vous devez choisir de prendre le Kernel, voyez l'exemple ci-dessous pour bien commencer, implémentez ce test et vérifiez que tout marche bien.
 ```php
-<?php
 
 namespace App\Tests;
 
@@ -80,8 +79,8 @@ class BookRepositoryTest extends KernelTestCase
 
 1. Testez maintenant les méthodes suivantes 
    
-   1.  `findBooksByMinPrice(float $minPrice)`: Trouver les livres dont le prix est supérieur à un certain montant. Remarques avec une requête classique je trouve 61 books qui dépasse le prix de 30 euros, testez d'abord en pur SQL  `SELECT COUNT(*) FROM book WHERE price > 30`
-   2. `findRecentBooks()`: Trouver les livres publiés dans les 30 derniers jours. Faites d'abord la requête puis comparez avec votre test dans la classe de test. Pensez à hydrater vos données avec le faker en place avec la syntaxe suivante afin de pouvoir tester cette méthode `'publishedAt' => self::faker()->dateTimeThisYear('+3 months')`. Faites également la requêtes SQL pour savoir combien vous avez de books qui correpsondent à cette requête : `SELECT COUNT(*) FROM book WHERE published_at >= DATE_SUB(CURDATE(), INTERVAL 30 DAY);`
+   1.  `findBooksByMinPrice(float $minPrice)`: Trouver les livres dont le prix est supérieur à un certain montant. Remarques avec une requête classique je trouve 61 books qui dépasse le prix de 30 euros, testez d'abord en pur SQL  `SELECT COUNT(*) FROM library_test.book WHERE price > 30`
+   2. `findRecentBooks()`: Trouver les livres publiés dans les 30 derniers jours. Faites d'abord la requête puis comparez avec votre test dans la classe de test. Pensez à hydrater vos données avec le faker en place avec la syntaxe suivante afin de pouvoir tester cette méthode `'publishedAt' => self::faker()->dateTimeThisYear('+3 months')`. Faites également la requêtes SQL pour savoir combien vous avez de books qui correpsondent à cette requête : `SELECT COUNT(*) FROM library_test.book WHERE published_at >= DATE_SUB(CURDATE(), INTERVAL 30 DAY);`
    3. `findBooksByTitle(string $title)`: Trouver les livres par titre, recherche insensible à la casse.
 
 ## Service BookService

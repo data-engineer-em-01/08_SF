@@ -5,12 +5,15 @@ use App\Repository\BookRepository;
 
 class BookService{
     private $bookRepository;
-    private $exchangeRate;
+    private $exchangeRate ;
 
-    public function __construct(BookRepository $bookRepository)
+    public function __construct(
+        BookRepository $bookRepository,
+        string $exchangeRate
+        )
     {
         $this->bookRepository = $bookRepository;
-        $this->exchangeRate = 1.1; 
+        $this->exchangeRate = $exchangeRate; 
     }
 
     /**

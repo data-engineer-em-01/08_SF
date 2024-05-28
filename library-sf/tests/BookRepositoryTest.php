@@ -3,13 +3,16 @@
 namespace App\Tests;
 
 use App\Entity\Book;
-use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use Doctrine\ORM\EntityManager;
 
 class BookRepositoryTest extends KernelTestCase
 {
+
+    // entity manager 
     private ?EntityManager $entityManager;
 
+    // Méthode qui est appelée avant chaque test
     protected function setUp(): void
     {
         $kernel = self::bootKernel();
@@ -19,6 +22,7 @@ class BookRepositoryTest extends KernelTestCase
             ->getManager();
     }
 
+    // un test 
     public function testPriceOneBookAuthor(): void
     {
         $book = $this->entityManager
@@ -28,30 +32,33 @@ class BookRepositoryTest extends KernelTestCase
         $this->assertSame('48.35', $book->getPrice());
     }
 
-    public function testFindBooksByMinPrice(): void
-    {
-        $books = $this->entityManager
-            ->getRepository(Book::class)
-            ->findBooksByMinPrice(30);
+    public function testFindBooksByMinPrice():void{
 
-        $this->assertSame(72, count($books));
+        $books = $this->entityManager
+        ->getRepository(Book::class)
+        ->findBooksByMinPrice(30);
+
+        $this->assertEquals(72, count($books) );
     }
 
-    public function testFindRecentBookse(): void
-    {
-        $books = $this->entityManager
-            ->getRepository(Book::class)
-            ->findRecentBooks();
+    public function testFindRecentBooks():void{
 
-        $this->assertSame(40, count($books));
+        $books = $this->entityManager
+        ->getRepository(Book::class)
+        ->findRecentBooks();
+
+        $this->assertEquals(40, count($books) );
     }
 
-    public function testFindBooksByTitle(): void
-    {
-        $books = $this->entityManager
-            ->getRepository(Book::class)
-            ->findBooksByTitle('Dicta reprehenderit.');
+    public function testFindBooksByTitle():void{
 
-        $this->assertSame(1, count($books));
+        $title = 'VEL naM veniam.' ;
+
+        $book = $this->entityManager
+        ->getRepository(Book::class)
+        ->findBooksByTitle($title);
+
+        $this->assertEquals('Vel nam veniam.', $book->getTitle() );
     }
+
 }

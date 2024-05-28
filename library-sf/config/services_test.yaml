@@ -21,6 +21,7 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
-    test_alias.service:
-        alias: 'App\Service\BookService'
+    App\Service\BookService:
         public: true
+        arguments:
+            $exchangeRate: '%env(EXCHANGE_RATE)%'

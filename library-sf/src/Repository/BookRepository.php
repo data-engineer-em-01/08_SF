@@ -43,7 +43,7 @@ class BookRepository extends ServiceEntityRepository
             ->where('LOWER(b.title) LIKE LOWER(:title)')
             ->setParameter('title', '%' . $title . '%')
             ->getQuery()
-            ->getResult();
+            ->getSingleResult();
     }
 
 }

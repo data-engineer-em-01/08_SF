@@ -25,5 +25,9 @@ class BookServiceTest extends KernelTestCase
         );
     }
 
+    public function testGetBooksPriceInDollars():void{
+        $books = $this->bookService->getBooksPriceInDollars();
+        $this->assertEquals( 100, count($books) ) ;
+    }
 
 }
