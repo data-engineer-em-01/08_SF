@@ -95,6 +95,34 @@ class BookRepositoryTest extends KernelTestCase
 1. Créer une nouvelle entité Category.
 *Mettre à jour l'entité Book pour inclure la relation Many-to-Many avec Category.*
 
+🥟 Schéma de données
+
+```mermaid
+erDiagram
+    BOOK {
+        int id PK
+        string title
+        decimal price
+        date published_at
+        int author_id FK
+    }
+    
+    CATEGORY {
+        int id PK
+        string name
+    }
+
+    BOOKS_CATEGORIES {
+        int book_id PK, FK
+        int category_id PK, FK
+    }
+
+    BOOK ||--o{ BOOKS_CATEGORIES : "contains"
+    CATEGORY ||--o{ BOOKS_CATEGORIES : "includes"
+```
+
+🎱 Remarque pour les besoins de l'exercice, supprimez les deux bases de données, les migrations et 
+
    1. Ajouter une méthode dans le service BookService pour récupérer les livres avec leurs catégories.
    2. Hydratater les deux entitées.
-   3. Imaginez un service et testez le
+   3. Imaginez un service et testez le.
