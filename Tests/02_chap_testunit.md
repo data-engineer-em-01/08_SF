@@ -1,6 +1,6 @@
 # Test unitaire
 
-## Création d'un test pour tester des méthodes dans un service
+## 1. Création d'un test pour tester des méthodes dans un service
 
 ```bash
 php bin/console make:test
@@ -13,7 +13,7 @@ Which test type would you like?:
 
 ```
 
-## Mise en place des tests pour les ripositories
+## 2. Mise en place des tests pour les ripositories
 
 Dans le fichier **.env.local**
 
@@ -83,14 +83,14 @@ class BookRepositoryTest extends KernelTestCase
    2. `findRecentBooks()`: Trouver les livres publiés dans les 30 derniers jours. Faites d'abord la requête puis comparez avec votre test dans la classe de test. Pensez à hydrater vos données avec le faker en place avec la syntaxe suivante afin de pouvoir tester cette méthode `'publishedAt' => self::faker()->dateTimeThisYear('+3 months')`. Faites également la requêtes SQL pour savoir combien vous avez de books qui correpsondent à cette requête : `SELECT COUNT(*) FROM library_test.book WHERE published_at >= DATE_SUB(CURDATE(), INTERVAL 30 DAY);`
    3. `findBooksByTitle(string $title)`: Trouver les livres par titre, recherche insensible à la casse.
 
-## Service BookService
+## 3. Service BookService
 
 1. Création du Service et des ses fonctionnnalités 
     1. calculatePriceWithBonus(float $price, float $bonusPercentage): float
     1. convertEuroToDollar(float $priceInEuro): float
     1. getBooksPriceInDollars(): array
    
-## Entité et Service 
+## 4. Entité et Service 
 
 1. Créer une nouvelle entité Category.
 *Mettre à jour l'entité Book pour inclure la relation Many-to-Many avec Category.*
