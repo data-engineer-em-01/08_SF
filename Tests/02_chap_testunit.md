@@ -78,6 +78,17 @@ class BookRepositoryTest extends KernelTestCase
 ```
 
 1. Testez maintenant les méthodes suivantes 
+
+Créez les tests avec la méthodologie TDD.
+
+🚀 TDD : Test Driven Developpment, l'implémentation du code métier piloter par les tests. Clairement, vous faites la logique du test lui-même avant de développer le code métier dans un service ou autre. 
+
+Remarques : **TestCase** ou **KernelTestCase** pour les besoins des exercices.
+Pour créez un test utiliser les makers de Symfony, pensez à répondre aux questions de la commande ci-dessous. 
+
+```bash
+php bin/console make:test
+```
    
    1.  `findBooksByMinPrice(float $minPrice)`: Trouver les livres dont le prix est supérieur à un certain montant. Remarques avec une requête classique je trouve 61 books qui dépasse le prix de 30 euros, testez d'abord en pur SQL  `SELECT COUNT(*) FROM library_test.book WHERE price > 30`
    2. `findRecentBooks()`: Trouver les livres publiés dans les 30 derniers jours. Faites d'abord la requête puis comparez avec votre test dans la classe de test. Pensez à hydrater vos données avec le faker en place avec la syntaxe suivante afin de pouvoir tester cette méthode `'publishedAt' => self::faker()->dateTimeThisYear('+3 months')`. Faites également la requêtes SQL pour savoir combien vous avez de books qui correpsondent à cette requête : `SELECT COUNT(*) FROM library_test.book WHERE published_at >= DATE_SUB(CURDATE(), INTERVAL 30 DAY);`
