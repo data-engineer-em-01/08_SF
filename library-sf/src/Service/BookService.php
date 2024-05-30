@@ -6,14 +6,17 @@ use App\Repository\BookRepository;
 class BookService{
     private $bookRepository;
     private $exchangeRate ;
+    private $roundPrice ;
 
     public function __construct(
         BookRepository $bookRepository,
-        string $exchangeRate
+        string $exchangeRate,
+         $roundPrice
         )
     {
         $this->bookRepository = $bookRepository;
         $this->exchangeRate = $exchangeRate; 
+        $this->roundPrice = $roundPrice ;
     }
 
     /**
@@ -25,7 +28,7 @@ class BookService{
      */
     public function calculatePriceWithBonus(float $price, float $bonusPercentage): float
     {
-        return round( $price * ( 1 -  $bonusPercentage / 100), 2 ) ;
+        return round( $price * ( 1 -  $bonusPercentage / 100), $this->roundPrice ) ;
     }
 
     /**

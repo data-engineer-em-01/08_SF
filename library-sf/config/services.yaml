@@ -17,3 +17,4 @@ services:
     App\Service\BookService:
         arguments:
             $exchangeRate: '%env(EXCHANGE_RATE)%'
+            $roundPrice: '%env(ROUND_PRICE)%'
